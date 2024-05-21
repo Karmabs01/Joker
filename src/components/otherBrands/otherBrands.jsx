@@ -22,6 +22,7 @@ function OtherBrands({
   const [step, setStep] = useState(3);
   const [isAllElements, setAllElements] = useState(false);
   const [isExtraElements, setExtraElements] = useState(false);
+  const [isShuffled, setIsShuffled] = useState(false);
 
   // const handleShowMore = () => {
   //   setVisibleBrands((prevVisibleBrands) => prevVisibleBrands + 8);
@@ -32,23 +33,16 @@ function OtherBrands({
   const api1043 = "https://pickbonus.myawardwallet.com/api/brands/read3.php";
   const api1044 = "https://pickbonus.myawardwallet.com/api/brands/read4.php";
 
-  function shuffleArray(array) {
-    const shuffledArray = array.slice();
-    for (let i = shuffledArray.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [shuffledArray[i], shuffledArray[j]] = [
-        shuffledArray[j],
-        shuffledArray[i],
-      ];
-    }
+  function showData(array) {
+    const showedArray = array.slice();
     //Обрезка массива до step элементов, чтобы было по шаблону
-    if (shuffledArray.length > step) {
+    if (showedArray.length > step) {
       setAllElements(false)
-      return shuffledArray.slice(0, step);
+      return showedArray.slice(0, step);
     } else {
       setAllElements(true)
     }
-    return shuffledArray;
+    return showedArray;
   }
 
   function loadMoreItems() {
@@ -105,7 +99,18 @@ function OtherBrands({
           }
 
           // Перемешиваем данные перед отображением
-          setOtherData(shuffleArray(filteredDataOther));
+          if (isShuffled) {
+            for (let i = filteredDataWithTopData.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [filteredDataWithTopData[i], filteredDataWithTopData[j]] = [
+                filteredDataWithTopData[j],
+                filteredDataWithTopData[i],
+              ];
+            }
+            setIsShuffled(true);
+          }
+
+          setOtherData(showData(filteredDataOther));
           setLoading(false);
 
           // Если нет брендов, вызывать setSelectedCountry
