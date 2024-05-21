@@ -30,45 +30,30 @@ function ChildComponent() {
   const countryOptions = [
     { code: "au", name: "Australia", flag: "🇦🇺" },
     { code: "at", name: "Austria", flag: "🇦🇹" },
-    { code: "be", name: "Belgium", flag: "🇧🇪" },
-    { code: "bg", name: "Bulgaria", flag: "🇧🇬" },
     { code: "ca", name: "Canada", flag: "🇨🇦" },
-    { code: "cz", name: "Czech", flag: "🇨🇿" },
-    { code: "dk", name: "Denmark", flag: "🇩🇰" },
     { code: "fi", name: "Finland", flag: "🇫🇮" },
-    { code: "fr", name: "France", flag: "🇫🇷" },
     { code: "de", name: "Germany", flag: "🇩🇪" },
     { code: "gr", name: "Greece", flag: "🇬🇷" },
-    { code: "hu", name: "Hungary", flag: "🇭🇺" },
     { code: "ie", name: "Ireland", flag: "🇮🇪" },
     { code: "it", name: "Italy", flag: "🇮🇹" },
     { code: "nl", name: "Netherlands", flag: "🇳🇱" },
     { code: "nz", name: "New Zealand", flag: "🇳🇿" },
     { code: "no", name: "Norway", flag: "🇳🇴" },
     { code: "pl", name: "Poland", flag: "🇵🇱" },
-    { code: "pt", name: "Portugal", flag: "🇵🇹" },
-    { code: "sk", name: "Slovakia", flag: "🇸🇰" },
-    { code: "es", name: "Spain", flag: "🇪🇸" },
     { code: "se", name: "Sweden", flag: "🇸🇪" },
     { code: "ch", name: "Switzerland", flag: "🇨🇭" },
-    { code: "tr", name: "Turkey", flag: "🇹🇷" },
-    { code: "gb", name: "United Kingdom", flag: "🇬🇧" },
     { code: "all", name: "World", flag: "🌍" },
   ];
   const countryOptions1043 = [
-    { code: "all", name: "World", flag: "🌍" },
+    { code: "all", name: "World", flag: "🌍" }, 
     { code: "ca", name: "Canada", flag: "🇨🇦" },
     { code: "us", name: "United States", flag: "🇺🇸" },
   ];
   const countryOptions1044 = [
     { code: "au", name: "Australia", flag: "🇦🇺" },
     { code: "at", name: "Austria", flag: "🇦🇹" },
-    { code: "be", name: "Belgium", flag: "🇧🇪" },
     { code: "ca", name: "Canada", flag: "🇨🇦" },
-    { code: "cz", name: "The Czech Republic", flag: "🇨🇿" },
-    { code: "dk", name: "Denmark", flag: "🇩🇰" },
     { code: "fi", name: "Finland", flag: "🇫🇮" },
-    { code: "fr", name: "France", flag: "🇫🇷" },
     { code: "de", name: "Germany", flag: "🇩🇪" },
     { code: "gb", name: "Great Britain", flag: "🇬🇧" },
     { code: "gr", name: "Greece", flag: "🇬🇷" },
@@ -77,13 +62,34 @@ function ChildComponent() {
     { code: "nl", name: "Netherlands", flag: "🇳🇱" },
     { code: "no", name: "Norway", flag: "🇳🇴" },
     { code: "nz", name: "New Zealand", flag: "🇳🇿" },
+    { code: "es", name: "Spain", flag: "🇪🇸" },
     { code: "pl", name: "Poland", flag: "🇵🇱" },
     { code: "se", name: "Sweden", flag: "🇸🇪" },
-    { code: "za", name: "South Africa", flag: "🇿🇦" },
     { code: "ch", name: "Switzerland", flag: "🇨🇭" },
     { code: "us", name: "USA", flag: "🇺🇸" },
     { code: "all", name: "World", flag: "🌍" },
   ];
+
+  const countryOptions1039 = [
+    { code: "au", name: "Australia", flag: "🇦🇺" },
+    { code: "at", name: "Austria", flag: "🇦🇹" },
+    { code: "ca", name: "Canada", flag: "🇨🇦" },
+    { code: "fi", name: "Finland", flag: "🇫🇮" },
+    { code: "de", name: "Germany", flag: "🇩🇪" },
+    { code: "gb", name: "Great Britain", flag: "🇬🇧" },
+    { code: "gr", name: "Greece", flag: "🇬🇷" },
+    { code: "ie", name: "Ireland", flag: "🇮🇪" },
+    { code: "it", name: "Italy", flag: "🇮🇹" },
+    { code: "nl", name: "Netherlands", flag: "🇳🇱" },
+    { code: "no", name: "Norway", flag: "🇳🇴" },
+    { code: "nz", name: "New Zealand", flag: "🇳🇿" },
+    { code: "es", name: "Spain", flag: "🇪🇸" },
+    { code: "pl", name: "Poland", flag: "🇵🇱" },
+    { code: "se", name: "Sweden", flag: "🇸🇪" },
+    { code: "ch", name: "Switzerland", flag: "🇨🇭" },
+    { code: "all", name: "World", flag: "🌍" },
+  ];
+
 
   useEffect(() => {
     fetch(
@@ -173,7 +179,7 @@ function ChildComponent() {
               onMouseDown={handleMouseDown}
               onChange={(e) => handleCountryChange(e.target.value)}
             >
-              {countryOptions.map((country, index) => (
+              {countryOptions1043.map((country, index) => (
                 <MenuItem
                   key={index}
                   value={country.code}
@@ -201,7 +207,35 @@ function ChildComponent() {
               onMouseDown={handleMouseDown}
               onChange={(e) => handleCountryChange(e.target.value)}
             >
-              {countryOptions.map((country, index) => (
+              {countryOptions1044.map((country, index) => (
+                <MenuItem
+                  key={index}
+                  value={country.code}
+                  selected={country.code === ipDataCode}
+                >
+                  <div className={country.code}></div>
+                  {country.name}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </Box>
+      </div>
+      )}
+       {source === "partner1039" && (
+        <div className="select-brand container">
+        <Box sx={{ m: 1, minWidth: 300 }}>
+          <FormControl fullWidth>
+            <InputLabel>{t("select")}</InputLabel>
+            <Select
+              id="countrySelect"
+              value={selectedCountry}
+              label={t("select")}
+              ref={selectRef}
+              onMouseDown={handleMouseDown}
+              onChange={(e) => handleCountryChange(e.target.value)}
+            >
+              {countryOptions1039.map((country, index) => (
                 <MenuItem
                   key={index}
                   value={country.code}

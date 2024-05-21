@@ -77,7 +77,7 @@ function AnotherBrands({
                 rowData["CasinoBrand"] !== "Mirax (FS)" &&
                 rowData["CasinoBrand"] !== "Katsubet (FS)" &&
                 rowData["CasinoBrand"] !== "7Bit (FS)" &&
-                rowData["Segment2"] === "Premium"
+                rowData["Networks"] === "1"
             );
           } else {
             filteredDataOther = responseData.brands.filter(
@@ -87,7 +87,7 @@ function AnotherBrands({
                 rowData["CasinoBrand"] !== "Mirax (FS)" &&
                 rowData["CasinoBrand"] !== "Katsubet (FS)" &&
                 rowData["CasinoBrand"] !== "7Bit (FS)" &&
-                rowData["Segment2"] === "Premium"
+                rowData["Networks"] === "1"
             );
           }
 

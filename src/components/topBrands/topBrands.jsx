@@ -49,13 +49,13 @@ function TopBrands({
 
   function shuffleArray(array) {
     const shuffledArray = array.slice(); // Создаем копию массива
-    // for (let i = shuffledArray.length - 1; i > 0; i--) {
-    //   const j = Math.floor(Math.random() * (i + 1));
-    //   [shuffledArray[i], shuffledArray[j]] = [
-    //     shuffledArray[j],
-    //     shuffledArray[i],
-    //   ];
-    // }
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
     //Обрезка массива до step элементов, чтобы было по шаблону
     if (shuffledArray.length > step) {
       setAllElements(false)
@@ -106,7 +106,7 @@ function TopBrands({
                 rowData["CasinoBrand"] !== "Mirax (FS)" &&
                 rowData["CasinoBrand"] !== "Katsubet (FS)" &&
                 rowData["CasinoBrand"] !== "7Bit (FS)" &&
-                rowData["Segment2"] === "Sandbox"
+                rowData["Networks"] === "1"
             );
           } else {
             filteredData = responseData.brands.filter(
@@ -116,7 +116,7 @@ function TopBrands({
                 rowData["CasinoBrand"] !== "Mirax (FS)" &&
                 rowData["CasinoBrand"] !== "Katsubet (FS)" &&
                 rowData["CasinoBrand"] !== "7Bit (FS)" &&
-                rowData["Segment2"] === "Sandbox"
+                rowData["Networks"] === "1"
             );
           }
 

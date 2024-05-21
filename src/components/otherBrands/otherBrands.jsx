@@ -34,13 +34,13 @@ function OtherBrands({
 
   function shuffleArray(array) {
     const shuffledArray = array.slice();
-    // for (let i = shuffledArray.length - 1; i > 0; i--) {
-    //   const j = Math.floor(Math.random() * (i + 1));
-    //   [shuffledArray[i], shuffledArray[j]] = [
-    //     shuffledArray[j],
-    //     shuffledArray[i],
-    //   ];
-    // }
+    for (let i = shuffledArray.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffledArray[i], shuffledArray[j]] = [
+        shuffledArray[j],
+        shuffledArray[i],
+      ];
+    }
     //Обрезка массива до step элементов, чтобы было по шаблону
     if (shuffledArray.length > step) {
       setAllElements(false)
@@ -90,7 +90,7 @@ function OtherBrands({
                 rowData["CasinoBrand"] !== "Mirax (FS)" &&
                 rowData["CasinoBrand"] !== "Katsubet (FS)" &&
                 rowData["CasinoBrand"] !== "7Bit (FS)" &&
-                rowData["Trendsetting"] === "1"
+                rowData["Networks"] === "1"
             );
           } else {
             filteredDataOther = responseData.brands.filter(
@@ -100,7 +100,7 @@ function OtherBrands({
                 rowData["CasinoBrand"] !== "Mirax (FS)" &&
                 rowData["CasinoBrand"] !== "Katsubet (FS)" &&
                 rowData["CasinoBrand"] !== "7Bit (FS)" &&
-                rowData["Trendsetting"] === "1"
+                rowData["Networks"] === "1"
             );
           }
 
