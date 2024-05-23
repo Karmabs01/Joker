@@ -43,10 +43,10 @@ function TopBrands({
   const urlParams = new URLSearchParams(window.location.search);
   const brandValue = urlParams.get("brand");
 
-  const apiOld = "https://pickbonus.myawardwallet.com/api/brands/read.php";
-  const apiNew = "https://pickbonus.myawardwallet.com/api/brands/read2.php";
-  const api1043 = "https://pickbonus.myawardwallet.com/api/brands/read3.php";
-  const api1044 = "https://pickbonus.myawardwallet.com/api/brands/read4.php";
+  const apiOld = "https://pickbonus.myawardwallet.com/api/brandsNew/read.php";
+  const apiNew = "https://pickbonus.myawardwallet.com/api/brandsNew2/read.php";
+  const api1043 = "https://pickbonus.myawardwallet.com/api/brandsNew3/read.php";
+  const api1044 = "https://pickbonus.myawardwallet.com/api/brandsNew4/read.php";
 
   function showData(array) {
     const showedArray = array.slice(); // Создаем копию массива
@@ -89,11 +89,11 @@ function TopBrands({
         const res = await fetch(url);
         if (res.ok) {
           const responseData = await res.json();
-          // const dataArray = Object.values(responseData.brands);
+          // const dataArray = Object.values(responseData.brandsNew);
           let filteredData = [];
-          console.log("respons3dData", responseData.brands);
+          console.log("respons3dData", responseData.brandsNew);
           if (geo) {
-            filteredData = responseData.brands.filter(
+            filteredData = responseData.brandsNew.filter(
               (rowData) =>
                 rowData.GEO === geo &&
                 rowData["CurrentStatus"] === "Ongoing" &&
@@ -103,7 +103,7 @@ function TopBrands({
                 rowData["Networks"] === "1"
             );
           } else {
-            filteredData = responseData.brands.filter(
+            filteredData = responseData.brandsNew.filter(
               (rowData) =>
                 rowData.GEO === ipDataCode &&
                 rowData["CurrentStatus"] === "Ongoing" &&
@@ -114,7 +114,7 @@ function TopBrands({
             );
           }
 
-          const topData = responseData.brands
+          const topData = responseData.brandsNew
             .filter((rowData) => rowData.Tech === brandValue)
             .map((item) => ({
               ...item,

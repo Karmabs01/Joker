@@ -28,10 +28,10 @@ function OtherBrands({
   //   setVisibleBrands((prevVisibleBrands) => prevVisibleBrands + 8);
   // };
 
-  const apiOld = "https://pickbonus.myawardwallet.com/api/brands/read.php";
-  const apiNew = "https://pickbonus.myawardwallet.com/api/brands/read2.php";
-  const api1043 = "https://pickbonus.myawardwallet.com/api/brands/read3.php";
-  const api1044 = "https://pickbonus.myawardwallet.com/api/brands/read4.php";
+  const apiOld = "https://pickbonus.myawardwallet.com/api/brandsNew/read.php";
+  const apiNew = "https://pickbonus.myawardwallet.com/api/brandsNew2/read.php";
+  const api1043 = "https://pickbonus.myawardwallet.com/api/brandsNew3/read.php";
+  const api1044 = "https://pickbonus.myawardwallet.com/api/brandsNew4/read.php";
 
   function showData(array) {
     const showedArray = array.slice();
@@ -77,7 +77,7 @@ function OtherBrands({
           let filteredDataOther = [];
 
           if (geo) {
-            filteredDataOther = responseData.brands.filter(
+            filteredDataOther = responseData.brandsNew.filter(
               (rowData) =>
                 rowData.GEO === geo &&
                 rowData["CurrentStatus"] === "Ongoing" &&
@@ -87,7 +87,7 @@ function OtherBrands({
                 rowData["Networks"] === "1"
             );
           } else {
-            filteredDataOther = responseData.brands.filter(
+            filteredDataOther = responseData.brandsNew.filter(
               (rowData) =>
                 rowData.GEO === ipDataCode &&
                 rowData["CurrentStatus"] === "Ongoing" &&
@@ -97,7 +97,7 @@ function OtherBrands({
                 rowData["Networks"] === "1"
             );
           }
-
+console.log("EE", filteredDataOther)
           // Перемешиваем данные перед отображением
           if (isShuffled) {
             for (let i = filteredDataWithTopData.length - 1; i > 0; i--) {
