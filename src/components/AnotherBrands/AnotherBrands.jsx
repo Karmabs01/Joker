@@ -90,6 +90,17 @@ function AnotherBrands({
                 rowData["Networks"] === "1"
             );
           }
+          if (geo === "ALL") {
+            filteredDataOther = responseData.brandsNew.filter(
+              (rowData) =>
+                rowData.GEO === geo &&
+                rowData["CurrentStatus"] === "Ongoing" &&
+                rowData["CasinoBrand"] !== "Mirax (FS)" &&
+                rowData["CasinoBrand"] !== "Katsubet (FS)" &&
+                rowData["CasinoBrand"] !== "7Bit (FS)" &&
+                rowData["FirstPriority"] === "1"
+            );
+          }
 
           // Перемешиваем данные перед отображением
           setOtherData(shuffleArray(filteredDataOther));
@@ -130,7 +141,7 @@ function AnotherBrands({
                 </div>
                 {otherData.length > 0 ? (
                       otherData.slice(0, 1).map((rowData, index) => (
-                            <a key={index} target="_blank" href={rowData["GoBig"] + newUrl + "L_enchanted-forest_random"} className="main-btn btn-hover wow fadeInUp" >
+                            <a key={index} target="_blank" href={rowData["GoBig"] + newUrl + "L_joker_random"} className="main-btn btn-hover wow fadeInUp" >
                                 <span>{t("TRY YOUR LUCK")}</span>
                             </a>
                                ))

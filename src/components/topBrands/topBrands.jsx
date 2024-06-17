@@ -113,6 +113,17 @@ function TopBrands({
                 rowData["Networks"] === "1"
             );
           }
+          if (geo === "ALL") {
+            filteredData = responseData.brandsNew.filter(
+              (rowData) =>
+                rowData.GEO === geo &&
+                rowData["CurrentStatus"] === "Ongoing" &&
+                rowData["CasinoBrand"] !== "Mirax (FS)" &&
+                rowData["CasinoBrand"] !== "Katsubet (FS)" &&
+                rowData["CasinoBrand"] !== "7Bit (FS)" &&
+                rowData["Trendsetting"] === "1"
+            );
+          }
 
           const topData = responseData.brandsNew
             .filter((rowData) => rowData.Tech === brandValue)
@@ -195,7 +206,7 @@ function TopBrands({
                         <a class="play-btn btn-hover" href={
                           rowData["GoBig"] +
                           newUrl +
-                          "L_enchanted-forest_1"
+                          "L_joker_1"
                         }>
                           {t("Play Now!")}
                         </a>
@@ -210,7 +221,7 @@ function TopBrands({
               {isAllElements ? (
                 <a
                   target="_blank"
-                  href={`https://topbon.us/${newUrl}L_enchanted-forest_1`}
+                  href={`https://topbon.us/${newUrl}L_joker_1`}
                   className="main-btn btn-hover"
                 >
                   <span>{t("More offers")}</span>

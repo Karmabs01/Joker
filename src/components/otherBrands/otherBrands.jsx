@@ -76,6 +76,8 @@ function OtherBrands({
           // const dataArray = Object.values(responseData);
           let filteredDataOther = [];
 
+          console.log("GEO: ", geo)
+          console.log("ipDataCode: ", ipDataCode)
           if (geo) {
             filteredDataOther = responseData.brandsNew.filter(
               (rowData) =>
@@ -95,6 +97,17 @@ function OtherBrands({
                 rowData["CasinoBrand"] !== "Katsubet (FS)" &&
                 rowData["CasinoBrand"] !== "7Bit (FS)" &&
                 rowData["Networks"] === "1"
+            );
+          }
+          if (geo === "ALL") {
+            filteredDataOther = responseData.brandsNew.filter(
+              (rowData) =>
+                rowData.GEO === geo &&
+                rowData["CurrentStatus"] === "Ongoing" &&
+                rowData["CasinoBrand"] !== "Mirax (FS)" &&
+                rowData["CasinoBrand"] !== "Katsubet (FS)" &&
+                rowData["CasinoBrand"] !== "7Bit (FS)" &&
+                rowData["Segment2"] !== ""
             );
           }
 console.log("EE", filteredDataOther)
@@ -163,7 +176,7 @@ console.log("EE", filteredDataOther)
                             <a class="play-btn btn-hover" href={
                               rowData["GoBig"] +
                               newUrl +
-                              "L_enchanted-forest_2"
+                              "L_joker_2"
                             }>
                               {t("Play Now!")}
                             </a>
@@ -191,7 +204,7 @@ console.log("EE", filteredDataOther)
                               <a class="play-btn btn-hover" href={
                                 rowData["GoBig"] +
                                 newUrl +
-                                "L_enchanted-forest_2"
+                                "L_joker_2"
                               }>
                                 {t("Play Now!")}
                               </a>
@@ -213,7 +226,7 @@ console.log("EE", filteredDataOther)
               {isAllElements ? (
                 <a
                   target="_blank"
-                  href={`https://topbon.us/${newUrl}L_enchanted-forest_2`}
+                  href={`https://topbon.us/${newUrl}L_joker_2`}
                   className="main-btn btn-hover"
                 >
                   <span>{t("More offers")}</span>
