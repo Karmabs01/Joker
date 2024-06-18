@@ -250,7 +250,7 @@ function ChildComponent() {
         </Box>
       </div>
       )}
-      {source !== "partner1044" && source !== "partner1043" && (
+      {source !== "partner1044" && source !== "partner1043" && source !== "partner1039" &&(
         <div className="select-brand container">
           <Box sx={{ m: 1, minWidth: 300 }}>
             <FormControl fullWidth>
