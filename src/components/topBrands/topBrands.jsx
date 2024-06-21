@@ -203,11 +203,7 @@ function TopBrands({
                       <p class="mb-15">{rowData["OurOfferContent"]}</p>
 
                       <div className="game__overlay">
-                        <a class="play-btn btn-hover" href={
-                          rowData["GoBig"] +
-                          newUrl +
-                          "L_joker_1"
-                        }>
+                        <a  target="_blank" class="play-btn btn-hover" href={ rowData["GoBig"] + newUrl + "L_joker_1"}>
                           {t("Play Now!")}
                         </a>
                       </div>

@@ -173,11 +173,7 @@ console.log("EE", filteredDataOther)
                           <p class="mb-15">{rowData["OurOfferContent"]}</p>
 
                           <div className="game__overlay">
-                            <a class="play-btn btn-hover" href={
-                              rowData["GoBig"] +
-                              newUrl +
-                              "L_joker_2"
-                            }>
+                            <a target="_blank" class="play-btn btn-hover" href={ rowData["GoBig"] + newUrl + "L_joker_2" }>
                               {t("Play Now!")}
                             </a>
                           </div>
@@ -201,11 +197,7 @@ console.log("EE", filteredDataOther)
                             <p class="mb-15">{rowData["OurOfferContent"]}</p>
   
                             <div className="game__overlay">
-                              <a class="play-btn btn-hover" href={
-                                rowData["GoBig"] +
-                                newUrl +
-                                "L_joker_2"
-                              }>
+                              <a  target="_blank" class="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_2"}>
                                 {t("Play Now!")}
                               </a>
                             </div>

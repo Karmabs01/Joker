@@ -150,14 +150,14 @@ function ChildComponent() {
   return (
     <header>
       <div className="container">
-        <Link className="flex" to={`/${newUrl}`}>
+        <Link  target="_blank" className="flex" to={`/${newUrl}`}>
           <img className="logo" src={`.${logo}`} />
         </Link>
         {!isMobile ? (
           <div className="flex ml-auto items-center">
             {Object.keys(user).length > 0 && (
               <div className="tickets">
-                <Link to={`https://topbon.us/fortune/${newUrl}`}>
+                <Link  target="_blank" to={`https://topbon.us/fortune/${newUrl}`}>
                   <img id="dollar" src={`.${dollar}`} alt={dollar} />
                   {t("Wheel of Fortune")} <span>{user.tickets}</span>
                 </Link>
@@ -180,6 +180,7 @@ function ChildComponent() {
                 <div className="additional-options" ref={menuRef}>
                   <div className="option">
                     <Link
+                     target="_blank"
                       className="flex items-center"
                       to={`https://topbon.us/personal/${newUrl}`}
                       onClick={() => setShowAdditionalOptions(false)}
@@ -201,6 +202,7 @@ function ChildComponent() {
               {Object.keys(user).length > 0 && (
                 <div className="flex items-center">
                   <Link
+                   target="_blank"
                     to={`https://topbon.us/personal/${newUrl}`}
                     className="wallet flex items-center"
                   >
@@ -221,6 +223,7 @@ function ChildComponent() {
                 <div className="list-menu">
                   {Object.keys(user).length > 0 && ( // Проверяем, есть ли данные в user
                     <Link
+                     target="_blank"
                       to={`https://topbon.us/personal/${newUrl}`}
                       className="balanceWithdraw"
                     >
@@ -231,6 +234,7 @@ function ChildComponent() {
                   <div className="mobile-menu-content">
                     {Object.keys(user).length > 0 && (
                       <Link
+                       target="_blank"
                         to={`https://topbon.us/fortune/${newUrl}`}
                         className="balanceWithdraw"
                       >
