@@ -47,6 +47,7 @@ function TopBrands({
   const apiNew = "https://bonusnumber1.com/api/brandsNew2/read.php";
   const api1043 = "https://bonusnumber1.com/api/brandsNew3/read.php";
   const api1044 = "https://bonusnumber1.com/api/brandsNew4/read.php";
+  const apiCLD_VIP = "https://bonusnumber1.com/api/brandsNew5/read.php";
 
   function showData(array) {
     const showedArray = array.slice(); // Создаем копию массива
@@ -81,6 +82,9 @@ function TopBrands({
             break;
           case "partner1044":
             url = api1044; // Для partner1044
+            break;
+          case "CLD_VIP":
+            url = apiCLD_VIP; // CLD_VIP
             break;
           default:
             url = apiOld; // Для всех остальных случаев
@@ -146,15 +150,15 @@ function TopBrands({
 
           // Перемешиваем данные перед отображением
           if (isShuffled) {
-          for (let i = filteredDataWithTopData.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [filteredDataWithTopData[i], filteredDataWithTopData[j]] = [
-              filteredDataWithTopData[j],
-              filteredDataWithTopData[i],
-            ];
+            for (let i = filteredDataWithTopData.length - 1; i > 0; i--) {
+              const j = Math.floor(Math.random() * (i + 1));
+              [filteredDataWithTopData[i], filteredDataWithTopData[j]] = [
+                filteredDataWithTopData[j],
+                filteredDataWithTopData[i],
+              ];
+            }
+            setIsShuffled(true);
           }
-          setIsShuffled(true);
-        }
           setData(showData(filteredDataWithTopData));
 
           setTopData([...topData]);
@@ -203,7 +207,7 @@ function TopBrands({
                       <p class="mb-15">{rowData["OurOfferContent"]}</p>
 
                       <div className="game__overlay">
-                        <a  target="_blank" class="play-btn btn-hover" href={ rowData["GoBig"] + newUrl + "L_joker_1"}>
+                        <a target="_blank" class="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_1"}>
                           {t("Play Now!")}
                         </a>
                       </div>

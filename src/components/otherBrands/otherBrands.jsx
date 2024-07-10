@@ -32,6 +32,7 @@ function OtherBrands({
   const apiNew = "https://bonusnumber1.com/api/brandsNew2/read.php";
   const api1043 = "https://bonusnumber1.com/api/brandsNew3/read.php";
   const api1044 = "https://bonusnumber1.com/api/brandsNew4/read.php";
+  const apiCLD_VIP = "https://bonusnumber1.com/api/brandsNew5/read.php";
 
   function showData(array) {
     const showedArray = array.slice();
@@ -65,6 +66,9 @@ function OtherBrands({
             break;
           case "partner1044":
             url = api1044; // Для partner1044
+            break;
+          case "CLD_VIP":
+            url = apiCLD_VIP; // CLD_VIP
             break;
           default:
             url = apiOld; // Для всех остальных случаев
@@ -110,7 +114,7 @@ function OtherBrands({
                 rowData["Segment2"] !== ""
             );
           }
-console.log("EE", filteredDataOther)
+          console.log("EE", filteredDataOther)
           // Перемешиваем данные перед отображением
           if (isShuffled) {
             for (let i = filteredDataWithTopData.length - 1; i > 0; i--) {
@@ -164,7 +168,7 @@ console.log("EE", filteredDataOther)
               </div>
               <div class="row col-xl-8 col-lg-12">
                 {otherData.length > 0 ? (
-                  otherData.slice(0,3).map((rowData, index) => (
+                  otherData.slice(0, 3).map((rowData, index) => (
                     <div class="col-xl-4 col-md-4 col-sm-6" key={index}>
                       <div class="single-game box-inner-shadow">
                         <div className="game_thumb">
@@ -173,7 +177,7 @@ console.log("EE", filteredDataOther)
                           <p class="mb-15">{rowData["OurOfferContent"]}</p>
 
                           <div className="game__overlay">
-                            <a target="_blank" class="play-btn btn-hover" href={ rowData["GoBig"] + newUrl + "L_joker_2" }>
+                            <a target="_blank" class="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_2"}>
                               {t("Play Now!")}
                             </a>
                           </div>
@@ -185,19 +189,19 @@ console.log("EE", filteredDataOther)
                   <p className="ti">{t("No brands available for your country")}</p>
                 )}
               </div>
-                {isExtraElements ? (
-                  <div class="row col-xl-12">
+              {isExtraElements ? (
+                <div class="row col-xl-12">
                   {otherData.length > 0 ? (
                     otherData.slice(3).map((rowData, index) => (
                       <div class="col-xl-3 col-md-3 col-sm-6" key={index}>
                         <div class="single-game box-inner-shadow">
                           <div className="game_thumb">
                             <img src={rowData["LinkImg"]} alt={rowData["LinkImg"]} />
-  
+
                             <p class="mb-15">{rowData["OurOfferContent"]}</p>
-  
+
                             <div className="game__overlay">
-                              <a  target="_blank" class="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_2"}>
+                              <a target="_blank" class="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_2"}>
                                 {t("Play Now!")}
                               </a>
                             </div>
@@ -209,10 +213,10 @@ console.log("EE", filteredDataOther)
                     <p className="ti">{t("No brands available for your country")}</p>
                   )}
                 </div>
-                ) : (
-                    <p></p>
-                )}
-              
+              ) : (
+                <p></p>
+              )}
+
             </div>
             <div class="view-all-btn text-center pt-30">
               {isAllElements ? (
