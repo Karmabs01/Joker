@@ -70,6 +70,9 @@ function OtherBrands({
           case "CLD_VIP":
             url = apiCLD_VIP; // CLD_VIP
             break;
+          case "partner1045":
+            url = apiCLD_VIP; // CLD_VIP
+            break;
           default:
             url = apiOld; // Для всех остальных случаев
         }
@@ -153,31 +156,31 @@ function OtherBrands({
   return (
     <div>
       {otherData.length > 0 && (
-        <section id="other-brands" class=" other-brands-section game-section pt-95 pb-95">
-          <div class="container">
-            <div class="row">
-              <div class="col-xl-4">
-                <div class="other-brands-content">
-                  <div class="image">
+        <section id="other-brands" className=" other-brands-section game-section pt-95 pb-95">
+          <div className="container">
+            <div className="row">
+              <div className="col-xl-4">
+                <div className="other-brands-content">
+                  <div className="image">
                     <img src={`.${card}`} alt={`.${card}`} />
                   </div>
-                  <div class="section-title">
-                    <h1 class="mb-20 wow fadeInUp" data-wow-delay=".2s"><span class="common-gre-color">{t("Joker's Best Bonus Casinos")}</span></h1>
+                  <div className="section-title">
+                    <h1 className="mb-20 wow fadeInUp" data-wow-delay=".2s"><span className="common-gre-color">{t("Joker's Best Bonus Casinos")}</span></h1>
                   </div>
                 </div>
               </div>
-              <div class="row col-xl-8 col-lg-12">
+              <div className="row col-xl-8 col-lg-12">
                 {otherData.length > 0 ? (
                   otherData.slice(0, 3).map((rowData, index) => (
-                    <div class="col-xl-4 col-md-4 col-sm-6" key={index}>
-                      <div class="single-game box-inner-shadow">
+                    <div className="col-xl-4 col-md-4 col-sm-6" key={index}>
+                      <div className="single-game box-inner-shadow">
                         <div className="game_thumb">
                           <img src={rowData["LinkImg"]} alt={rowData["LinkImg"]} />
 
-                          <p class="mb-15">{rowData["OurOfferContent"]}</p>
+                          <p className="mb-15">{rowData["OurOfferContent"]}</p>
 
                           <div className="game__overlay">
-                            <a target="_blank" class="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_2"}>
+                            <a target="_blank" className="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_2"}>
                               {t("Play Now!")}
                             </a>
                           </div>
@@ -190,18 +193,18 @@ function OtherBrands({
                 )}
               </div>
               {isExtraElements ? (
-                <div class="row col-xl-12">
+                <div className="row col-xl-12">
                   {otherData.length > 0 ? (
                     otherData.slice(3).map((rowData, index) => (
-                      <div class="col-xl-3 col-md-3 col-sm-6" key={index}>
-                        <div class="single-game box-inner-shadow">
+                      <div className="col-xl-3 col-md-3 col-sm-6" key={index}>
+                        <div className="single-game box-inner-shadow">
                           <div className="game_thumb">
                             <img src={rowData["LinkImg"]} alt={rowData["LinkImg"]} />
 
-                            <p class="mb-15">{rowData["OurOfferContent"]}</p>
+                            <p className="mb-15">{rowData["OurOfferContent"]}</p>
 
                             <div className="game__overlay">
-                              <a target="_blank" class="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_2"}>
+                              <a target="_blank" className="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_2"}>
                                 {t("Play Now!")}
                               </a>
                             </div>
@@ -218,7 +221,7 @@ function OtherBrands({
               )}
 
             </div>
-            <div class="view-all-btn text-center pt-30">
+            <div className="view-all-btn text-center pt-30">
               {isAllElements ? (
                 <a
                   target="_blank"

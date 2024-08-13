@@ -86,6 +86,9 @@ function TopBrands({
           case "CLD_VIP":
             url = apiCLD_VIP; // CLD_VIP
             break;
+          case "partner1045":
+            url = apiCLD_VIP; // CLD_VIP
+            break;
           default:
             url = apiOld; // Для всех остальных случаев
         }
@@ -188,26 +191,26 @@ function TopBrands({
   return (
     <div className="mtt10">
       {data.length > 0 && (
-        <section id="top-brand" class="game-section pt-30 pb-55">
-          <div class="container">
-            <div class="row justify-content-center">
-              <div class="col-xxl-10 col-xl-10 col-lg-10 col-md-10">
-                <div class="section-title text-center right-greadient mb-50">
-                  <h2 class="mb-25">{t("Joker's New Favorites: Fresh and Exciting Casinos")}</h2>
+        <section id="top-brand" className="game-section pt-30 pb-55">
+          <div className="container">
+            <div className="row justify-content-center">
+              <div className="col-xxl-10 col-xl-10 col-lg-10 col-md-10">
+                <div className="section-title text-center right-greadient mb-50">
+                  <h2 className="mb-25">{t("Joker's New Favorites: Fresh and Exciting Casinos")}</h2>
                 </div>
               </div>
             </div>
-            <div class="row">
+            <div className="row">
               {data.map((rowData, index) => (
-                <div class="col-xl-3 col-md-6 col-sm-6" key={index}>
-                  <div class="single-game box-inner-shadow">
+                <div className="col-xl-3 col-md-6 col-sm-6" key={index}>
+                  <div className="single-game box-inner-shadow">
                     <div className="game_thumb">
                       <img src={rowData["LinkImg"]} alt={rowData["LinkImg"]} />
 
-                      <p class="mb-15">{rowData["OurOfferContent"]}</p>
+                      <p className="mb-15">{rowData["OurOfferContent"]}</p>
 
                       <div className="game__overlay">
-                        <a target="_blank" class="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_1"}>
+                        <a target="_blank" className="play-btn btn-hover" href={rowData["GoBig"] + newUrl + "L_joker_1"}>
                           {t("Play Now!")}
                         </a>
                       </div>
@@ -217,7 +220,7 @@ function TopBrands({
               )
               )}
             </div>
-            <div class="view-all-btn text-center pt-30">
+            <div className="view-all-btn text-center pt-30">
               {isAllElements ? (
                 <a
                   target="_blank"

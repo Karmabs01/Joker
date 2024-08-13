@@ -62,6 +62,9 @@ function AnotherBrands({
           case "CLD_VIP":
             url = apiCLD_VIP; // CLD_VIP
             break;
+          case "partner1045":
+            url = apiCLD_VIP; // CLD_VIP
+            break;
           default:
             url = apiOld; // Для всех остальных случаев
         }
@@ -132,13 +135,13 @@ function AnotherBrands({
 
   return (
 
-    <section id="home" class="hero-section go-zoom-1">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <div class="hero-content top-greadient">
-              <span class="wow fadeInLeft mb-20" data-wow-delay=".2s"> {t("Why So Serious? Grab Your Bonus Now!")}</span>
-              <h4 class="wow fadeInUp" data-wow-delay=".4s">
+    <section id="home" className="hero-section go-zoom-1">
+      <div className="container">
+        <div className="row align-items-center">
+          <div className="col-lg-6">
+            <div className="hero-content top-greadient">
+              <span className="wow fadeInLeft mb-20" data-wow-delay=".2s"> {t("Why So Serious? Grab Your Bonus Now!")}</span>
+              <h4 className="wow fadeInUp" data-wow-delay=".4s">
                 {t("We've handpicked the most exclusive and jaw-dropping bonuses from top-tier online casinos just for you. The Joker's treasure trove of rewards is just a click away!")}
               </h4>
 
@@ -153,8 +156,8 @@ function AnotherBrands({
               <p className="ti">{t("No brands available for your country")}</p>
             )}
           </div>
-          <div class="col-lg-6">
-            <div class="hero-img wow fadeInRight" data-wow-delay=".5s">
+          <div className="col-lg-6">
+            <div className="hero-img wow fadeInRight" data-wow-delay=".5s">
               <img src={`.${image}`} alt={`.${image}`} />
             </div>
           </div>
